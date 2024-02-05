@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="dashboard_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1200.0" style="-fx-background-color: #B0C4DE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashboardFXMLController">
+   <left>
+      <AnchorPane prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #E0FFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnFood" contentDisplay="CENTER" layoutX="20.0" layoutY="250.0" mnemonicParsing="false" onAction="#btnFoodAction" prefHeight="35.0" prefWidth="210.0" styleClass="button-style" stylesheets="@design/style.css" text="Food">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font></Button>
+            <Button fx:id="btnDrink" alignment="CENTER" layoutX="20.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnDrinkAction" prefHeight="35.0" prefWidth="210.0" styleClass="button-style" stylesheets="@design/style.css" text="Drink">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font></Button>
+            <Button fx:id="btnOrder" alignment="CENTER" layoutX="20.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnOrderAction" prefHeight="35.0" prefWidth="210.0" styleClass="button-style" stylesheets="@design/style.css" text="Order">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font></Button>
+            <FontAwesomeIconView glyphName="USER_CIRCLE" layoutX="90.0" layoutY="104.0" size="70" />
+            <Label fx:id="name" alignment="CENTER" contentDisplay="BOTTOM" layoutX="50.0" layoutY="120.0" prefHeight="17.0" prefWidth="150.0" text="name">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font></Label>
+            <Button fx:id="aboutBtn" alignment="CENTER" layoutX="20.0" layoutY="430.0" mnemonicParsing="false" onAction="#aboutBtnAction" prefHeight="35.0" prefWidth="210.0" styleClass="button-style" stylesheets="@design/style.css" text="About">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Logout" alignment="CENTER" layoutX="20.0" layoutY="510.0" mnemonicParsing="false" onAction="#LogoutAction" prefHeight="35.0" prefWidth="210.0" styleClass="button-style" stylesheets="@design/style.css" text="Logout">
+               <font>
+                  <Font name="Tw Cen MT Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <StackPane fx:id="MainPanel" minWidth="-Infinity" prefHeight="580.0" prefWidth="925.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="FoodMenu" minWidth="-Infinity" prefHeight="580.0" prefWidth="950.0" style="-fx-background-color: #FF8C00;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" layoutX="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="136.0" prefWidth="940.0" text="Food Menu" textFill="DARKORANGE">
+                     <font>
+                        <Font name="Serif Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="38.0" layoutY="150.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="Burger" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Burger ">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceBurger" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.17500">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/burger.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyBurger" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addBurger" alignment="CENTER" mnemonicParsing="false" onAction="#addBurgerAction" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateBurger" mnemonicParsing="false" onAction="#updateBurgerAction" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="342.0" layoutY="150.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="Pizza" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Pizza">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="pricePizza" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.60000">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/pizza.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyPizza" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addPizza" alignment="CENTER" mnemonicParsing="false" onAction="#addPizzabtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updatePizza" mnemonicParsing="false" onAction="#updatePizzaBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="641.0" layoutY="150.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="Fries" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Fries">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceFries" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.10000">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/fries.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyFries" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addFries" alignment="CENTER" mnemonicParsing="false" onAction="#addFriesBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateFries" mnemonicParsing="false" onAction="#updateFriesBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="38.0" layoutY="366.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="hotdog" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Hotdog">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceHotdog" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.20000">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/hotdog.jpeg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyHotdog" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addHotdog" alignment="CENTER" mnemonicParsing="false" onAction="#addHotdogBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateHotdog" mnemonicParsing="false" onAction="#updateHotdogBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="342.0" layoutY="366.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="FriedChicken" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Fried Chicken">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceFriedChicken" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.12000">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/fried%20chicken.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyFriedChicken" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addFriedChicken" alignment="CENTER" mnemonicParsing="false" onAction="#addFriedChickenBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateFriedC" mnemonicParsing="false" onAction="#updateFriedCBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="641.0" layoutY="366.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="Kebab" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Kebab">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceKebab" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.17500">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/kebab.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyKebab" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addKebab" alignment="CENTER" mnemonicParsing="false" onAction="#addKebabBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateKebab" mnemonicParsing="false" onAction="#updateKebabBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="DrinkMenu" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" prefHeight="580.0" prefWidth="950.0" style="-fx-background-color: #FF8C00;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" layoutX="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="136.0" prefWidth="930.0" text="Drink Menu" textFill="DARKORANGE">
+                     <font>
+                        <Font name="Serif Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="38.0" layoutY="150.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="Cola" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Cola Cola">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceCola" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.9500">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/cola.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyCola" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addCola" alignment="CENTER" mnemonicParsing="false" onAction="#addColaBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateICol" mnemonicParsing="false" onAction="#updateIColBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="342.0" layoutY="150.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="AvocadoJuice" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Avocado Juice">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceAvocadoJuice" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.18500">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/jus%20alpukat(1).jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyAvocadoJuice" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addAvocadoJuice" alignment="CENTER" mnemonicParsing="false" onAction="#addAvocadoJuiceBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateIAvo" mnemonicParsing="false" onAction="#updateIAvoBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="641.0" layoutY="150.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="IcedCoffe" alignment="CENTER" prefHeight="16.0" prefWidth="111.0" text="Iced Coffe Matcha">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceIcedCoffe" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.23000">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/iced%20coffe%20matcha.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyIcedCoffe" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addIcedCoffe" alignment="CENTER" mnemonicParsing="false" onAction="#addIcedCoffeBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateIce" mnemonicParsing="false" onAction="#updateIceBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="38.0" layoutY="366.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="DragonFruit" alignment="CENTER" prefHeight="16.0" prefWidth="107.0" text="Dragon Fruit Fizz">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceDragonFruit" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.17000">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/dragon%20fruit%20fizz.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyDragonFruit" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addDragonFruit" alignment="CENTER" mnemonicParsing="false" onAction="#addDragonFruitBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateIDra" mnemonicParsing="false" onAction="#updateIDraBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="342.0" layoutY="366.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="BrownSugar" alignment="CENTER" prefHeight="16.0" prefWidth="108.0" text="Brown Sugar Milk">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceBrownSugar" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.19000">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/brown%20sugar%20milk.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyBrownSugar" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addBrownSugar" alignment="CENTER" mnemonicParsing="false" onAction="#addBrownSugarBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateIBro" mnemonicParsing="false" onAction="#updateIBroBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="641.0" layoutY="366.0" prefHeight="200.0" prefWidth="240.0" stylesheets="@design/style.css">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="RedVelvet" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="Red Velvet Coffe">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceRedVelvet" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="100.0" text="Rp.18000">
+                                       <font>
+                                          <Font name="Times New Roman" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <ImageView fitHeight="150.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/red%20velved%20coffe.jpg" />
+                                 </image>
+                              </ImageView>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Spinner fx:id="qtyRedVelvet" prefHeight="25.0" prefWidth="80.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Spinner>
+                                    <Button fx:id="addRedVelvet" alignment="CENTER" mnemonicParsing="false" onAction="#addRedVelvetBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="updateRed" mnemonicParsing="false" onAction="#updateRedBtn" prefHeight="22.0" prefWidth="70.0" styleClass="btn" stylesheets="@design/style.css" text="Update">
+                                       <font>
+                                          <Font name="Tw Cen MT Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Order" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" prefHeight="580.0" prefWidth="950.0" style="-fx-background-color: #FF8C00;" stylesheets="@design/style.css">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="400.0" layoutX="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/Title-Background.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="136.0" prefWidth="930.0" text="Order" textFill="DARKORANGE">
+                     <font>
+                        <Font name="Serif Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableOrder" layoutX="14.0" layoutY="150.0" onMouseClicked="#menuSelectOrder" prefHeight="420.0" prefWidth="700.0" styleClass="table" stylesheets="@design/style.css">
+                    <columns>
+                      <TableColumn fx:id="tableOrder_prodName" prefWidth="413.0" text="Name Product" />
+                      <TableColumn fx:id="tableOrder_qty" minWidth="0.0" prefWidth="87.0" text="Qty" />
+                        <TableColumn fx:id="tableOrder_price" prefWidth="196.0" text="Price" />
+                    </columns>
+                  </TableView>
+                  <AnchorPane layoutX="730.0" layoutY="150.0" prefHeight="222.0" prefWidth="193.0" stylesheets="@design/style.css">
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="Remove" layoutX="12.0" layoutY="152.0" mnemonicParsing="false" onAction="#RemoveAction" prefHeight="25.0" prefWidth="85.0" styleClass="btn" stylesheets="@design/style.css" text="Remove">
+                           <font>
+                              <Font name="Serif Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="clearBtn" layoutX="12.0" layoutY="182.0" mnemonicParsing="false" onAction="#clearBtnAction" prefHeight="25.0" prefWidth="85.0" styleClass="btn" stylesheets="@design/style.css" text="Clear">
+                           <font>
+                              <Font name="Serif Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="772.0" layoutY="189.0" text="Total    : ">
+                     <font>
+                        <Font name="Serif Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Total" layoutX="824.0" layoutY="189.0" prefHeight="20.0" prefWidth="90.0" />
+                  <Label layoutX="772.0" layoutY="214.0" text="Cash    :">
+                     <font>
+                        <Font name="Serif Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="772.0" layoutY="238.0" text="Return :">
+                     <font>
+                        <Font name="Serif Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Return" layoutX="824.0" layoutY="238.0" prefHeight="20.0" prefWidth="90.0" />
+                  <TextField fx:id="Cash" layoutX="824.0" layoutY="210.0" prefHeight="25.0" prefWidth="90.0" />
+                  <Button fx:id="Pay" layoutX="824.0" layoutY="265.0" mnemonicParsing="false" onAction="#PayAction" prefHeight="25.0" prefWidth="90.0" styleClass="btn" stylesheets="@design/style.css" text="Pay">
+                     <font>
+                        <Font name="Serif Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <styleClass>
+                  <String fx:value="menu" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+         </children></StackPane>
+   </right>
+</BorderPane>
