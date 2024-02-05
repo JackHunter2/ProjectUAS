@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb19cc26-e581-4ee7-b46a-afa2e3ffa136">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM `product`]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prod_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prod_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="price_1" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{price}]]></variableExpression>
+	</variable>
+	<variable name="price_2" class="java.lang.Double" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{price}]]></variableExpression>
+	</variable>
+	<variable name="price_3" class="java.lang.Double" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{price}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="168" y="20" width="229" height="34" uuid="733737b8-14ba-48b3-875b-c68cd6a6960f"/>
+				<textElement>
+					<font fontName="Serif" size="24"/>
+				</textElement>
+				<text><![CDATA[AR Food and Beverage]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="6" width="109" height="27" uuid="8bb58df1-9609-4834-a671-c66dc9af1be7"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="252" y="6" width="71" height="23" uuid="faae09dc-b5d3-4138-af01-bdb169e83c38"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="6" width="118" height="23" uuid="75c8733f-27f1-4b18-b1b6-f591ba397361"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<text><![CDATA[Price(Rp)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="9522cd7f-1bd2-441e-84c5-2c72c64294d1"/>
+			</line>
+			<line>
+				<reportElement x="1" y="35" width="554" height="2" uuid="c98a4b97-26a7-4160-b49f-fbb197f432f1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="43" y="0" width="143" height="31" uuid="bdea9a32-6627-4ea4-a394-63bef38d4ac3"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prod_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="0" width="97" height="31" uuid="732a3cc8-8bda-494e-b4da-680732bc0149"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="0" width="104" height="31" uuid="1e9ada3e-31f8-4abd-a6cf-293da467de95"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="0" width="554" height="1" uuid="62dd92f6-ac7f-4315-b6e0-6957bb43d7fa"/>
+			</line>
+			<staticText>
+				<reportElement x="348" y="0" width="84" height="33" uuid="83a5d863-3091-4a0d-ae82-af1024921ef9"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<text><![CDATA[Total : Rp.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="432" y="0" width="100" height="33" uuid="26d1bd8d-2085-4f08-9704-46698380699e"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{price_3}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="152" y="21" width="296" height="33" uuid="e80b4ece-8548-432a-924e-923ea7657bb0"/>
+				<textElement>
+					<font fontName="Serif" size="24"/>
+				</textElement>
+				<text><![CDATA[Thank you for your order !!!]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
